@@ -12,7 +12,7 @@ services:
       - 8000:8080
       - 8001:50000
     volumes:
-      - jenkins_data:jenkins-data:/var/jenkins_home
+      - jenkins_data:/var/jenkins_home
 
 volumes:
   jenkins_data:
