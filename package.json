@@ -1,0 +1,12 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "idb:client": "docker exec -it jenkins /bin/bash --login",
+    "preinstall": "npx only-allow yarn"
+  }
+}
