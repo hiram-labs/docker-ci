@@ -9,8 +9,8 @@ services:
     container_name: jenkins
     restart: unless-stopped
     ports:
-      - 8000:8080
-      - 8001:50000
+      - 9010:8080
+      - 9011:50000
     volumes:
       - jenkins_data:/var/jenkins_home
 
