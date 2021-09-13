@@ -8,11 +8,18 @@ services:
     image: hiramlabs/jenkins
     container_name: jenkins
     restart: unless-stopped
-    ports:
-      - 9010:8080
-      - 9011:50000
+#    ports:
+#      - 9010:8080
+#      - 9011:50000
     volumes:
       - jenkins_data:/var/jenkins_home
+    networks:
+      - interface
 
 volumes:
   jenkins_data:
+
+networks:
+  interface:
+    external:
+      name: interface
