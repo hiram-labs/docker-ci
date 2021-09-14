@@ -1,0 +1,22 @@
+#!/bin/bash
+
+__ARG=$1
+
+__START_DOCKER_COMPOSE="start"
+__STOP_DOCKER_COMPOSE="stop"
+
+__START_JENKINS_SHELL="jkn:shell"
+
+if [[ "$__ARG" == "$__START_DOCKER_COMPOSE" ]]; then
+    shift
+    docker-compose up -d "$@"
+fi
+
+if [[ "$__ARG" == "$__STOP_DOCKER_COMPOSE" ]]; then
+    shift
+    docker-compose down "$@"
+fi
+
+if [[ "$__ARG" == "$__START_JENKINS_SHELL" ]]; then
+    docker exec -it jenkins /bin/bash --login
+fi
