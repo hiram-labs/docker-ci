@@ -6,6 +6,10 @@ __START_DOCKER_COMPOSE="start"
 __STOP_DOCKER_COMPOSE="stop"
 
 __START_JENKINS_SHELL="jkn:shell"
+__START_VSCODE_SHELL="vsc:shell"
+
+__CURRENT_UID=$(id -u):$(id -g)
+export __CURRENT_UID
 
 if [[ "$__ARG" == "$__START_DOCKER_COMPOSE" ]]; then
     shift
@@ -19,4 +23,8 @@ fi
 
 if [[ "$__ARG" == "$__START_JENKINS_SHELL" ]]; then
     docker exec -it jenkins /bin/bash --login
+fi
+
+if [[ "$__ARG" == "$__START_VSCODE_SHELL" ]]; then
+    docker exec -it vscode /bin/bash --login
 fi

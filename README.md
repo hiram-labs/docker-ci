@@ -1,6 +1,7 @@
 ## CI/CD
 
 1. jenkins
+2. code-server (vscode)
 
 ---
 
@@ -43,4 +44,10 @@ Use the `./run` shell script to execute the following commands:
 
 ```
 ./run jkn:shell
+```
+
+- get shell into vscode container
+
+```
+./run vsc:shell
 ```
