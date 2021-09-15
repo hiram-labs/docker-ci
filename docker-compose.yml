@@ -8,16 +8,33 @@ services:
     image: hiramlabs/jenkins
     container_name: jenkins
     restart: unless-stopped
-#    ports:
-#      - 9010:8080
-#      - 9011:50000
+    #    ports:
+    #      - 9010:8080
+    #      - 9011:50000
     volumes:
       - jenkins_data:/var/jenkins_home
     networks:
       - interface
 
+  vscode:
+    build:
+      context: ./images
+      dockerfile: vscode.dockerfile
+    image: hiramlabs/vscode
+    container_name: vscode
+    restart: unless-stopped
+    #    ports:
+    #      - 9011:8080
+    volumes:
+      - vscode_data:/home/coder/project
+      - ./volume/vscode:/home/coder/.config
+    networks:
+      - interface
+    user: ${__CURRENT_UID}
+
 volumes:
   jenkins_data:
+  vscode_data:
 
 networks:
   interface:
