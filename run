@@ -9,7 +9,10 @@ __START_JENKINS_SHELL="jkn:shell"
 __START_VSCODE_SHELL="vsc:shell"
 
 __CURRENT_UID=$(id -u):$(id -g)
+__CURRENT_UID_DOCKER_GID=$(id -u):$(getent group docker | cut -d: -f3)
+
 export __CURRENT_UID
+export __CURRENT_UID_DOCKER_GID
 
 if [[ "$__ARG" == "$__START_DOCKER_COMPOSE" ]]; then
     shift
