@@ -51,3 +51,11 @@ Use the `./run` shell script to execute the following commands:
 ```
 ./run vsc:shell
 ```
+
+**_HINT_**
+
+There may arise docker permission issues for Jenkins if `./run` is not used to start containers a remedy is to:
+
+> Mount a specific user docker unix socket like
+>
+> /run/user/"$(id -u)"/docker.sock:/var/run/docker.sock

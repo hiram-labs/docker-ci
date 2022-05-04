@@ -16,6 +16,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - interface
+    user: ${__CURRENT_UID_DOCKER_GID}
 
   vscode:
     build:
