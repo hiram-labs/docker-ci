@@ -38,5 +38,5 @@ volumes:
 
 networks:
   interface:
-    external:
-      name: interface
+    name: interface
+    external: true
